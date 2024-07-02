@@ -1,0 +1,11 @@
+en:
+  profile: "Profile"
+  log_out: "Log out"
+  sign_up: "Sign up"
+  log_in: "Log in"
+  sign_in: "Sign in"
+  forgot_your_password: "Forgot your password?"
+  password_validates_format: "Must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
+  did_not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+  did_not_receive_unlock_instructions: "Didn't receive unlock instructions?"
+  sign_in_with: "Sign in with"

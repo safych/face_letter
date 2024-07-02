@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FaceLetter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= link_to t("profile"), profile_path %><br />
+      <%= link_to t("log_out"), destroy_user_session_path, method: :delete %><br />
+    <% else %>
+      <%= link_to t("sign_up"), new_user_registration_path %><br />
+      <%= link_to t("log_in"), new_user_session_path %><br />
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
