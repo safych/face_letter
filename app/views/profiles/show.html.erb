@@ -1,0 +1,9 @@
+<h1>Profile</h1>
+<% flash.each do |key, value| %>
+  <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
+    <%= value %>
+  </div>
+<% end %>
+
+<%= render "profiles/all_user_links" %>
+<%= render "profiles/user_link_create_form" %>
