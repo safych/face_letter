@@ -22,7 +22,7 @@ class UserLinkCreator
         @message[:error] = I18n.t("user_link_did_not_create")
       end
     else
-      @message[:error] = I18n.t("password_not_current")
+      @message[:error] = I18n.t("password_not_correct")
     end
   end
 end

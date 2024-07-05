@@ -23,7 +23,7 @@ class UserLinkUpdater
         @message[:error] = I18n.t("user_link_did_not_update")
       end
     else
-      @message[:error] = I18n.t("not_current_user")
+      @message[:error] = I18n.t("not_correct_user")
     end
   end
 end
