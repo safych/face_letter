@@ -7,3 +7,7 @@
 
 <%= render "profiles/all_user_links" %>
 <%= render "profiles/user_link_create_form" %>
+<br />
+<h2>User's data</h2>
+<%= render "profiles/user_update_name_surname_form", user: @user %>
+<%= render "profiles/user_update_password_form", user: @user %>
