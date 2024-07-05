@@ -1,0 +1,16 @@
+<h3>Add user's link</h3>
+<%= form_with(model: @user_link, url: user_links_path, method: :post) do |f| %>
+  <div class="field">
+    <%= f.label :url, t("url") %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, t("password") %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="action">
+    <%= f.submit t("add_url") %>
+  </div>
+<% end %>
