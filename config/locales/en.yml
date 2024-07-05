@@ -1,4 +1,5 @@
 en:
+  home: "Face letter"
   profile: "Profile"
   log_out: "Log out"
   sign_up: "Sign up"
@@ -9,3 +10,15 @@ en:
   did_not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
   did_not_receive_unlock_instructions: "Didn't receive unlock instructions?"
   sign_in_with: "Sign in with"
+  add_url: "Add url"
+  are_you_sure: "Are you sure?"
+  password_not_current: "Password is not current"
+  user_link_successful_created: "User's link created successful!"
+  user_link_did_not_create: "User's link didn't create"
+  user_link_successful_destroyed: "User's link destroyed successful!"
+  user_link_did_not_destroy: "User's link didn't destroy"
+  not_current_user: "User's not current user"
+  user_link_successful_updated: "User's link updated successful!"
+  user_link_did_not_update: "User's link didn't update"
+  update_url: "Update url"
+
