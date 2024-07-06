@@ -5,10 +5,30 @@ en:
   sign_up: "Sign up"
   log_in: "Log in"
   sign_in: "Sign in"
-  forgot_your_password: "Forgot your password?"
+  update: "Update"
+  user: "User"
+  
+  views:
+    users:
+      shared:
+        _links:
+          log_in: "Log in"
+          sign_up: "Sign up"
+          forgot_your_password: "Forgot your password?"
+          did_not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+          did_not_receive_unlock_instructions: "Didn't receive unlock instructions?"
+
+      sessions:
+        new:
+          log_in: "Log in"
+          remember_me: "Remember me"
+          email: "Email"
+          password: "Password"
+
+  
   password_validates_format: "Must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
-  did_not_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
-  did_not_receive_unlock_instructions: "Didn't receive unlock instructions?"
+  
+  
   sign_in_with: "Sign in with"
   add_url: "Add url"
   are_you_sure: "Are you sure?"
@@ -26,4 +46,7 @@ en:
   user_data_did_not_update: "The user's data didn't update"
   user_password_successful_updated: "The user's password updated successful!"
   user_password_did_not_update: "The user's password didn't update"
+  update_password: "Update password"
+  current_password: "Current password"
+  new_password: "New password"
 
