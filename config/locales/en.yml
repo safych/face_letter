@@ -10,6 +10,83 @@ en:
   
   views:
     users:
+      registrations:
+        edit:
+          email: "Email"
+          currently_waiting_confirmation_for: "Currently waiting confirmation for:"
+          password_confirmation: "Password confirm"
+          password: "Password"
+          back: "Back"
+          leave_blank_if_you_don't_want_to_change_it: "leave blank if you don't want to change it"
+          we_need_your_current_password_to_confirm_your_changes: "we need your current password to confirm your changes"
+          update: "Update"
+          edit: "Edit"
+          cancel_my_account: "Cancel my account"
+          characters_minimum: "characters minimum"
+          are_you_sure: "Are you sure?"
+          unhappy: "Unhappy?"
+        
+        new:
+          email: "Email"
+          name: "Name"
+          surname: "Surname"
+          password: "Password"
+          password_confirmation: "Password confirmation"
+          characters_minimum: "characters minimum"
+          sign_up: "Sign up"
+
+      unlocks:
+        new:
+          resend_unlock_instructions: "Resend unlock instructions"
+          email: "Email"
+      
+      passwords:
+        edit:
+          new_password: "New password"
+          confirm_new_password: "Confirm new password"
+          characters_minimum: "characters minimum"
+          change_my_password: "Change my password"
+          change_your_password: "Change your password"
+
+        new:
+          email: "Email"
+          send_mew_reset_password_instructions: "Send me reset password instructions"
+          forgot_your_password: "Forgot your password?"
+
+      confirmations:
+        new:
+          email: "Email"
+          resend_confirmation_instructions: "Resend confirmation instructions"
+
+      mailer:
+        confirmation_instructions:
+          welcome: "Welcome"
+          you_can_confirm_your_account_email_through_the_link_below: "You can confirm your account email through the link below:"
+          confirm_my_account: "Confirm my account"
+
+        email_changed:
+          hello: "Hello"
+          we're_contacting_you_to_notify_you_that_your_email_is_being_changed_to: "We're contacting you to notify you that your email is being changed to"
+          we're_contacting_you_to_notify_you_that_your_email_has_been_changed_to: "We're contacting you to notify you that your email has been changed to"
+
+        password_changed:
+          hello: "Hello"
+          we're_contacting_you_to_notify_you_that_your_password_has_been_changed: "We're contacting you to notify you that your password has been changed."
+
+        reset_password_instructions:
+          hello: "Hello"
+          someone_has_requested_a_link_to_change_your_password_you_can_do_this_through_the_link_below: "Someone has requested a link to change your password. You can do this through the link below."
+          change_my_password: "Change my password"
+          if_you_didn't_request_this_please_ignore_this_email: "If you didn't request this, please ignore this email."
+          your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one: "Your password won't change until you access the link above and create a new one."
+
+        unlock_instructions:
+          hello: "Hello"
+          your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+          click_the_link_below_to_unlock_your_account: "Click the link below to unlock your account:"
+          unlock_my_account: "Unlock my account"
+
+
       shared:
         _links:
           log_in: "Log in"
