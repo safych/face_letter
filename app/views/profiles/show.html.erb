@@ -14,6 +14,12 @@
 </div>
 <br />
 
+<%= link_to t("views.profiles.show.show_user_avatar_update_form"), "#", onclick: "document.getElementById('user_avatar_update_form').style.display = 'block'; return false;" %>
+<div id="user_avatar_update_form", style="display: none;">
+  <%= render "profiles/user_avatar_update_form", user: @user %>
+</div>
+<br />
+
 <%= link_to t("views.profiles.show.show_user_link_create_form"), "#", onclick: "document.getElementById('user_link_create_form').style.display = 'block'; return false;" %>
 <div id="user_link_create_form", style="display: none;">
   <%= render "profiles/user_link_create_form" %>
