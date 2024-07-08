@@ -1,1 +1,36 @@
-<h1>Home page</h1>
+<% if @users.respond_to?(:each) %>
+  <% @users.each do |user| %>
+    <div class="user-card text-center bg-white">
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, class: "user-photo" %>
+      <% else %>
+        <img src="https://via.placeholder.com/100" alt="User Photo" class="user-photo">
+      <% end %>
+      <h4 class="user-name"><%= user.name %> <%= user.surname %></h4>
+      <div class="social-links">
+          <% user.user_link.each do |link| %>
+            <%= link_to href=link.url do %>
+              <%= render "home/image", link: link.url %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <% user = @users %>
+    <div class="user-card text-center bg-white">
+      <% if user.avatar.attached? %>
+        <%= image_tag user.avatar, class: "user-photo" %>
+      <% else %>
+        <img src="https://via.placeholder.com/100" alt="User Photo" class="user-photo">
+      <% end %>
+      <h4 class="user-name"><%= user.name %> <%= user.surname %></h4>
+      <div class="social-links">
+          <% user.user_link.each do |link| %>
+            <%= link_to href=link.url do %>
+              <%= render "home/image", link: link.url %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,15 @@
+<% if link.include? "instagram.com" %>
+  <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" %>
+<% elsif link.include? "x.com" %>
+  <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/300px-X_logo_2023.svg.png" %>
+<% elsif link.include? "facebook.com" %>
+  <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" %>
+<% elsif link.include? "youtube.com" %>
+  <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/YouTube_social_red_circle_%282017%29.svg/120px-YouTube_social_red_circle_%282017%29.svg.png" %>
+<% elsif link.include? "github.com" %>
+  <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/116px-Font_Awesome_5_brands_github.svg.png" %>
+<% elsif link.include? "gitlab.com" %>
+  <%= image_tag src="https://images.ctfassets.net/xz1dnu24egyd/1IRkfXmxo8VP2RAE5jiS1Q/ea2086675d87911b0ce2d34c354b3711/gitlab-logo-500.png" %>
+<% else %>
+  <%= image_tag src="https://cdn-icons-png.flaticon.com/128/7268/7268615.png" %>
+<% end %>
