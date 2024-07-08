@@ -7,7 +7,36 @@ en:
   sign_in: "Sign in"
   update: "Update"
   user: "User"
+
+  services:
+    user_updater:
+      not_correct_user_or_password: "The user or password is incorrect."
+      user_data_successful_updated: "The user's data updated successful!"
+      user_data_did_not_update: "The user's data didn't update"
+      user_password_successful_updated: "The user's password updated successful!"
+      user_password_did_not_update: "The user's password didn't update"
+      user_avatar_successful_updated: "The user's avatar updated successful!"
+      user_avatar_did_not_update: "The user's avatar didn't update"
+
+    user_link_updater:
+      user_link_successful_updated: "User's link updated successful!"
+      user_link_did_not_update: "User's link didn't update"
+      not_correct_user: "The user's incorrect"
+
+    user_link_destroyer:
+      user_link_successful_destroyed: "User's link destroyed successful!"
+      user_link_did_not_destroy: "User's link didn't destroy"
+      not_correct_user: "The user's incorrect"
+
+    user_link_creator:
+      user_link_successful_created: "User's link created successful!"
+      user_link_did_not_create: "User's link didn't create"
+      password_not_correct: "The password is incorrect"
   
+  models:
+    user:
+      password_validates_format: "Must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
+
   views:
     profiles:
       show:
@@ -29,6 +58,9 @@ en:
         surname: "Surname"
         current_password: "Current password"
         new_password: "New password"
+        update_avatar: "Update avatar"
+        avatar: "Avatar"
+        show_user_avatar_update_form: "Show user avatar update form"
 
     users:
       registrations:
@@ -55,6 +87,7 @@ en:
           password_confirmation: "Password confirmation"
           characters_minimum: "characters minimum"
           sign_up: "Sign up"
+          avatar: "Avatar"
 
       unlocks:
         new:
@@ -121,26 +154,12 @@ en:
           remember_me: "Remember me"
           email: "Email"
           password: "Password"
+  
 
-  
-  password_validates_format: "Must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
-  
-  
   sign_in_with: "Sign in with"
   are_you_sure: "Are you sure?"
-  password_not_correct: "The password is incorrect"
-  user_link_successful_created: "User's link created successful!"
-  user_link_did_not_create: "User's link didn't create"
-  user_link_successful_destroyed: "User's link destroyed successful!"
   user_link_did_not_destroy: "User's link didn't destroy"
   not_correct_user: "The user's incorrect"
-  user_link_successful_updated: "User's link updated successful!"
-  user_link_did_not_update: "User's link didn't update"
-  not_correct_user_or_password: "The user or password is incorrect."
-  user_data_successful_updated: "The user's data updated successful!"
-  user_data_did_not_update: "The user's data didn't update"
-  user_password_successful_updated: "The user's password updated successful!"
-  user_password_did_not_update: "The user's password didn't update"
   update_password: "Update password"
   current_password: "Current password"
   new_password: "New password"

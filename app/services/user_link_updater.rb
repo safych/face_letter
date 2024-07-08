@@ -18,12 +18,12 @@ class UserLinkUpdater
   def update
     if @user_link.user == @current_user
       if @user_link.update(url: params[:url])
-        @message[:done] = I18n.t("user_link_successful_updated")
+        @message[:done] = I18n.t("services.user_link_updater.user_link_successful_updated")
       else
-        @message[:error] = I18n.t("user_link_did_not_update")
+        @message[:error] = I18n.t("services.user_link_updater.user_link_did_not_update")
       end
     else
-      @message[:error] = I18n.t("not_correct_user")
+      @message[:error] = I18n.t("services.user_link_updater.not_correct_user")
     end
   end
 end

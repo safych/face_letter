@@ -17,12 +17,12 @@ class UserLinkDestroyer
   def destroy
     if @user_link.user == @current_user
       if @user_link.destroy
-        @message[:done] = I18n.t("user_link_successful_destroyed")
+        @message[:done] = I18n.t("services.user_link_destroyer.user_link_successful_destroyed")
       else
-        @message[:error] = I18n.t("user_link_did_not_destroy")
+        @message[:error] = I18n.t("services.user_link_destroyer.user_link_did_not_destroy")
       end
     else
-      @message[:error] = I18n.t("not_correct_user")
+      @message[:error] = I18n.t("services.user_link_destroyer.not_correct_user")
     end
   end
 end
