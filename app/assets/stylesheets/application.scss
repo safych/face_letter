@@ -5,3 +5,35 @@
 .navbar-inverse {
   border-radius: 0 !important;
 }
+
+.user-card {
+  max-width: 30%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 3%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
+}
+
+.user-photo {
+  width: 20%;
+  object-fit: cover;
+  margin-bottom: 5%;
+}
+
+.social-links a {
+  margin: 0 2%;
+  font-size: 1.5em;
+  color: #555;
+}
+
+.social-links a:hover {
+  color: rgba(0, 0, 0, 0);
+}
+
+.social-links img {
+  width: 10%;
+  margin-top: 3%;
+  border-radius: 50%;
+}

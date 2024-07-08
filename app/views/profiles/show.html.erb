@@ -1,4 +1,7 @@
 <h1><%= t("views.profiles.show.profile") %></h1>
+
+<%= render "profiles/user_card" %>
+
 <% flash.each do |key, value| %>
   <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
     <%= value %>

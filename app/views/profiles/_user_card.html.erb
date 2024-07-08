@@ -1,0 +1,19 @@
+<div class="user-card text-center bg-white">
+    <% if current_user.avatar.attached? %>
+      <%= image_tag current_user.avatar, class: "user-photo" %>
+    <% else %>
+      <img src="https://via.placeholder.com/100" alt="User Photo" class="user-photo">
+    <% end %>
+    <h4 class="user-name"><%= current_user.name %> <%= current_user.surname %></h4>
+    <div class="social-links">
+        <%= link_to href="https://instagram.com" do %>
+          <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" %>
+        <% end %>
+        <%= link_to href="https://facebook.com" do %>
+          <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" %>
+        <% end %>
+        <%= link_to href="https://x.com/" do %>
+          <%= image_tag src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/300px-X_logo_2023.svg.png" %>
+        <% end %>
+    </div>
+</div>
