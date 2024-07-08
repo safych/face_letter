@@ -1,16 +1,16 @@
-<h3>Add user's link</h3>
+<h3><%= t("views.profiles.show.add_user_link") %></h3>
 <%= form_with(model: @user_link, url: user_links_path, method: :post) do |f| %>
   <div class="field">
-    <%= f.label :url, t("url") %>
+    <%= f.label :url, t("views.profiles.show.url") %>
     <%= f.text_field :url %>
   </div>
 
   <div class="field">
-    <%= f.label :password, t("password") %>
+    <%= f.label :password, t("views.profiles.show.password") %>
     <%= f.password_field :password %>
   </div>
 
   <div class="action">
-    <%= f.submit t("add_url") %>
+    <%= f.submit t("views.profiles.show.add_url") %>
   </div>
 <% end %>

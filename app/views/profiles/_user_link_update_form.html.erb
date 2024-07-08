@@ -1,10 +1,10 @@
 <%= form_with(model: user_link, url: user_link_path(user_link), method: :patch) do |f| %>
   <div class="field">
-    <%= f.label :url, t("url") %>
+    <%= f.label :url, t("views.profiles.show.url") %>
     <%= f.text_field :url, autocomplete: "url" %>
   </div>
 
   <div class="action">
-    <%= f.submit t("update_url") %>
+    <%= f.submit t("views.profiles.show.update_url") %>
   </div>
 <% end %>

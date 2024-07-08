@@ -1,13 +1,29 @@
-<h1>Profile</h1>
+<h1><%= t("views.profiles.show.profile") %></h1>
 <% flash.each do |key, value| %>
   <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
     <%= value %>
   </div>
 <% end %>
 
-<%= render "profiles/all_user_links" %>
-<%= render "profiles/user_link_create_form" %>
+<%= link_to t("views.profiles.show.show_all_user_links"), "#", onclick: "document.getElementById('all_user_links').style.display = 'block'; return false;" %>
+<div id="all_user_links", style="display: none;">
+  <%= render "profiles/all_user_links" %>
+</div>
 <br />
-<h2>User's data</h2>
-<%= render "profiles/user_update_name_surname_form", user: @user %>
-<%= render "profiles/user_update_password_form", user: @user %>
+
+<%= link_to t("views.profiles.show.show_user_link_create_form"), "#", onclick: "document.getElementById('user_link_create_form').style.display = 'block'; return false;" %>
+<div id="user_link_create_form", style="display: none;">
+  <%= render "profiles/user_link_create_form" %>
+</div>
+<br />
+
+<%= link_to t("views.profiles.show.show_user_name_surname_update_form"), "#", onclick: "document.getElementById('user_name_surname_update_form').style.display = 'block'; return false;" %>
+<div id="user_name_surname_update_form", style="display: none;">
+  <%= render "profiles/user_name_surname_update_form", user: @user %>
+</div>
+<br />
+
+<%= link_to t("views.profiles.show.show_user_password_update_form"), "#", onclick: "document.getElementById('user_password_update_form').style.display = 'block'; return false;" %>
+<div id="user_password_update_form", style="display: none;">
+  <%= render "profiles/user_password_update_form", user: @user %>
+</div>

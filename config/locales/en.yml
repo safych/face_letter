@@ -9,6 +9,27 @@ en:
   user: "User"
   
   views:
+    profiles:
+      show:
+        profile: "Profile"
+        show_all_user_links: "Show all user's links"
+        show_user_link_create_form: "Show user's link create form"
+        show_user_name_surname_update_form: "Show user name and surname update form"
+        show_user_password_update_form: "Show user password update form"
+        all_urls: "All urls:"
+        add_user_link: "Add user's link"
+        add_url: "Add url"
+        update_url: "Update url"
+        update_name_and_surname: "Update name and surname"
+        update: "Update"
+        password_update_form: "Password update form"
+        url: "Url"
+        password: "Password"
+        name: "Name"
+        surname: "Surname"
+        current_password: "Current password"
+        new_password: "New password"
+
     users:
       registrations:
         edit:
@@ -86,7 +107,6 @@ en:
           click_the_link_below_to_unlock_your_account: "Click the link below to unlock your account:"
           unlock_my_account: "Unlock my account"
 
-
       shared:
         _links:
           log_in: "Log in"
@@ -107,7 +127,6 @@ en:
   
   
   sign_in_with: "Sign in with"
-  add_url: "Add url"
   are_you_sure: "Are you sure?"
   password_not_correct: "The password is incorrect"
   user_link_successful_created: "User's link created successful!"
@@ -117,7 +136,6 @@ en:
   not_correct_user: "The user's incorrect"
   user_link_successful_updated: "User's link updated successful!"
   user_link_did_not_update: "User's link didn't update"
-  update_url: "Update url"
   not_correct_user_or_password: "The user or password is incorrect."
   user_data_successful_updated: "The user's data updated successful!"
   user_data_did_not_update: "The user's data didn't update"
