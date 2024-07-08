@@ -32,6 +32,7 @@ en:
       user_link_successful_created: "User's link created successful!"
       user_link_did_not_create: "User's link didn't create"
       password_not_correct: "The password is incorrect"
+      error_limit_user_links: "The number of user links is greater than allowed!"
   
   models:
     user:
