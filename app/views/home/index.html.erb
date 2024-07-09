@@ -16,6 +16,9 @@
       </div>
     </div>
   <% end %>
+<div style="display: flex; justify-content: center;">
+  <%= paginate @users %>
+</div>
 <% else %>
   <% user = @users %>
     <div class="user-card text-center bg-white">
