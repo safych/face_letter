@@ -3,8 +3,8 @@
   <% @user_links.each do |user_link| %>
     <div class="url">
       <h4 style="color: black"><%= user_link.url %></h4>
-      <%= link_to t("destroy_url"), user_link_path(user_link), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") } %><br />
-      <%= link_to t("update_url"), "#", onclick: "document.getElementById('update-link-form-#{user_link.id}').style.display = 'block'; return false;" %>
+      <%= link_to t("views.profiles.show.destroy_url"), user_link_path(user_link), data: { turbo_method: :delete, turbo_confirm: t("views.profiles.show.are_you_sure") } %><br />
+      <%= link_to t("views.profiles.show.update_url"), "#", onclick: "document.getElementById('update-link-form-#{user_link.id}').style.display = 'block'; return false;" %>
       <div id="update-link-form-<%= user_link.id %>", style="display: none;">
         <%= render "profiles/user_link_update_form", user_link: user_link %>
       </div>
@@ -14,8 +14,8 @@
   <% user_link = @user_links %>
   <div class="url">
     <h4 style="color: black"><%= user_link.url %></h4>
-    <%= link_to t("destroy_url"), user_link_path(user_link), data: { turbo_method: :delete, turbo_confirm: t("are_you_sure") } %><br />
-    <%= link_to t("update_url"), "#", onclick: "document.getElementById('update-link-form-#{user_link.id}').style.display = 'block'; return false;" %>
+    <%= link_to t("views.profiles.show.destroy_url"), user_link_path(user_link), data: { turbo_method: :delete, turbo_confirm: t("views.profiles.show.are_you_sure") } %><br />
+    <%= link_to t("views.profiles.show.update_url"), "#", onclick: "document.getElementById('update-link-form-#{user_link.id}').style.display = 'block'; return false;" %>
     <div id="update-link-form-<%= user_link.id %>", style="display: none;">
       <%= render "profiles/user_link_update_form", user_link: user_link %>
     </div>

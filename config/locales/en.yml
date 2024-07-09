@@ -62,6 +62,8 @@ en:
         update_avatar: "Update avatar"
         avatar: "Avatar"
         show_user_avatar_update_form: "Show user avatar update form"
+        are_you_sure: "Are you sure?"
+        destroy_url: "Destroy url"
 
     users:
       registrations:
@@ -156,12 +158,3 @@ en:
           email: "Email"
           password: "Password"
   
-
-  sign_in_with: "Sign in with"
-  are_you_sure: "Are you sure?"
-  user_link_did_not_destroy: "User's link didn't destroy"
-  not_correct_user: "The user's incorrect"
-  update_password: "Update password"
-  current_password: "Current password"
-  new_password: "New password"
-
