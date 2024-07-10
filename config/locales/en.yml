@@ -1,12 +1,14 @@
 en:
-  home: "Face letter"
-  profile: "Profile"
-  log_out: "Log out"
-  sign_up: "Sign up"
-  log_in: "Log in"
   sign_in: "Sign in"
   update: "Update"
   user: "User"
+
+  controllers:
+    users:
+      sessions:
+        recaptcha_error: "reCAPTCHA was ignored"
+      registrations:
+        recaptcha_error: "reCAPTCHA was ignored"
 
   services:
     user_updater:
@@ -64,6 +66,14 @@ en:
         show_user_avatar_update_form: "Show user avatar update form"
         are_you_sure: "Are you sure?"
         destroy_url: "Destroy url"
+
+    layouts:
+      application:
+        home: "Face letter"
+        profile: "Profile"
+        log_out: "Log out"
+        sign_up: "Sign up"
+        log_in: "Log in"
 
     users:
       registrations:

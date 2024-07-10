@@ -18,7 +18,7 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <%= link_to t("home"), root_path, class: "navbar-brand" %>
+          <%= link_to t("views.layouts.application.home"), root_path, class: "navbar-brand" %>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -28,10 +28,10 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to t("profile"), profile_path %>
+                  <%= link_to t("views.layouts.application.profile"), profile_path %>
                 </li>
                 <li>
-                  <%= link_to t("log_out"), destroy_user_session_path, method: :delete %>
+                  <%= link_to t("views.layouts.application.log_out"), destroy_user_session_path, method: :delete %>
                 </li>
               </ul>
             </li>
@@ -39,13 +39,13 @@
             <li>
               <%= link_to new_user_registration_path do %>
                 <span class="glyphicon glyphicon-user"></span> 
-                <%= t("sign_up") %>
+                <%= t("views.layouts.application.sign_up") %>
               <% end %>
             </li>
             <li>
               <%= link_to new_user_session_path do %>
                 <span class="glyphicon glyphicon-log-in"></span>
-                <%= t("log_in") %>
+                <%= t("views.layouts.application.log_in") %>
               <% end %>
             </li>
           <% end %>
