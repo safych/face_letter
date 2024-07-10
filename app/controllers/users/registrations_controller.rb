@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :check_captcha, only: [:create]
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -59,4 +60,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def check_captcha
+    return if verify_recaptcha
+
+    flash[:recaptcha_error] = I18n.t("controllers.users.registrations.recaptcha_error")
+    redirect_to new_user_registration_path
+  end
 end

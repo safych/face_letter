@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  before_action :check_captcha, only: [:create]
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -24,4 +25,13 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  private
+
+  def check_captcha
+    return if verify_recaptcha
+
+    flash[:recaptcha_error] = I18n.t("controllers.users.sessions.recaptcha_error")
+    redirect_to new_user_session_path
+  end
 end

@@ -46,6 +46,9 @@ gem "bootstrap-icons-helper"
 # Use Kaminary to split models into pages
 gem "kaminari", "~> 1.2", ">= 1.2.2"
 
+# Use reCAPTCHA
+gem "recaptcha"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
