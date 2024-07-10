@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @users = User.select(User.attribute_names - ['encrypted_password']).page(permitted_params[:page])
+    @users = User.select(User.attribute_names - ['encrypted_password', 'email']).page(permitted_params[:page])
   end
 
   private
