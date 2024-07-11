@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+  resource :email, controller: 'users/emails', only: [:edit, :update]
   resources :user_links, only: [:create, :update, :destroy]
   resource :profile, only: :show
   resources :users, only: :update
