@@ -1,0 +1,7 @@
+<p><%= t("views.users.mailer.update_email.welcome") %> <%= @email %></p>
+
+<p><%= t("views.users.mailer.update_email.token") %>: <%= @token %></p>
+
+<p><%= t("views.users.mailer.update_email.you_can_confirm_change_account_email_through_the_link_below") %></p>
+
+<p><%= link_to t("views.users.mailer.update_email.confirm_new_email"), @url %></p>
