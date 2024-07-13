@@ -26,6 +26,12 @@
 </div>
 <br />
 
+<%= link_to t("views.profiles.show.user_email_update_form"), "#", onclick: "document.getElementById('user_email_update_form').style.display = 'block'; return false;" %>
+<div id="user_email_update_form", style="display: none;">
+  <%= render "profiles/user_email_update_form", user: @user %>
+</div>
+<br />
+
 <%= link_to t("views.profiles.show.show_user_name_surname_update_form"), "#", onclick: "document.getElementById('user_name_surname_update_form').style.display = 'block'; return false;" %>
 <div id="user_name_surname_update_form", style="display: none;">
   <%= render "profiles/user_name_surname_update_form", user: @user %>
