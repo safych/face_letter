@@ -28,10 +28,10 @@ class UserUpdater
       update_name_surname
     elsif @params[:new_password]
       update_password
-    elsif @params[:email]
-      update_email
     elsif @params[:avatar]
       update_avatar
+    else
+      send_letter_for_update_email
     end
   end
 
@@ -51,8 +51,11 @@ class UserUpdater
     end
   end
 
-  def update_email
-
+  def send_letter_for_update_email
+    @user.update_email_token = SecureRandom.hex(3)
+    @user.update_email_token_sent_at = DateTime.now
+    @user.save
+    UserMailer.update_email(@user.email, @user.update_email_token).deliver_now
   end
 
   def update_avatar
