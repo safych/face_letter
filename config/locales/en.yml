@@ -3,6 +3,10 @@ en:
   update: "Update"
   user: "User"
 
+  mailers:
+    user_mailer:
+      token_to_changed_email: "Token to chenged email"
+
   controllers:
     users:
       sessions:
@@ -11,6 +15,10 @@ en:
         recaptcha_error: "reCAPTCHA was ignored"
 
   services:
+    email_updater:
+      not_correct_token_or_time: "The token is invalid or this token is out of date"
+      user_email_successful_updated: "User's email updated successful!"
+
     user_updater:
       not_correct_user_or_password: "The user or password is incorrect."
       user_data_successful_updated: "The user's data updated successful!"
@@ -66,6 +74,10 @@ en:
         show_user_avatar_update_form: "Show user avatar update form"
         are_you_sure: "Are you sure?"
         destroy_url: "Destroy url"
+        user_email_update_form: "Show user's email update form"
+        update_user_email: "Update user's email"
+        send_letter_to_update_email: "Send letter to update email"
+        new_email: "New email"
 
     layouts:
       application:
@@ -76,6 +88,11 @@ en:
         log_in: "Log in"
 
     users:
+      emails:
+        edit:
+          new_email: "New email"
+          token: "Token"
+
       registrations:
         edit:
           email: "Email"
@@ -126,6 +143,13 @@ en:
           resend_confirmation_instructions: "Resend confirmation instructions"
 
       mailer:
+        update_email:
+          welcome: "Welcome"
+          you_can_confirm_new_account_email_through_the_link_below: "You can confirm new account's email through the link below:"
+          confirm_new_email: "Confirm new email"
+          new_email: "New email"
+          token: "Token"
+
         confirmation_instructions:
           welcome: "Welcome"
           you_can_confirm_your_account_email_through_the_link_below: "You can confirm your account email through the link below:"
