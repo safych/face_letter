@@ -1,6 +1,4 @@
 class UserMailer < ApplicationMailer
-  attr_reader :email, :token, :new_email
-
   def update_email(email, token)
     @email = email
     @token = token
