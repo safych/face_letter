@@ -1,0 +1,16 @@
+<%= form_with(model: current_user, url: email_path(current_user), method: :patch) do |f| %>
+  <div class="field">
+    <%= f.label :new_email, t("views.users.emails.edit.new_email") %><br />
+    <%= f.email_field :new_email, autofocus: true, autocomplete: "unconfirmed_email" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :token, t("view.users.emails.edit.token") %><br />
+    <%= f.text_field :token %>
+  </div>
+  <br />
+
+  <div class="action">
+    <%= f.submit t("views.profiles.show.update") %>
+  </div>
+<% end %>
