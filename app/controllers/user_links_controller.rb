@@ -33,6 +33,6 @@ class UserLinksController < ApplicationController
   end
 
   def user_link_params
-    params.require(:user_link).permit(:url, :password)
+    params.require(:user_link).permit(:url)
   end
 end

@@ -9,18 +9,10 @@ class UserLinkCreator
   end
 
   def call
-    password_verification
+    check_user_links_count
   end
 
   private
-
-  def password_verification
-    if @user.valid_password?(@params[:password])
-      check_user_links_count
-    else
-      @message[:error] = I18n.t("services.user_link_creator.password_not_correct")
-    end
-  end
 
   def check_user_links_count
     if @user.user_link.count > 10
