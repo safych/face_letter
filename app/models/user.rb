@@ -11,12 +11,25 @@ class User < ApplicationRecord
   validates :password, format: { 
     with: /\A(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[[:^alnum:]])/,
     message: I18n.t("models.user.password_validates_format")
-  }
-  validates :name, presence: true, length: { maximum: 50 }
-  validates :surname, presence: true, length: { maximum: 50 }
+  }, if: :password_required?
+  validates :name, presence: true, length: { maximum: 50 }, unless: :google_auth?
+  validates :surname, presence: true, length: { maximum: 50 }, unless: :google_auth?
 
   def self.from_google(u)
-    create_with(uid: u[:uid], provider: 'google',
-                password: Devise.friendly_token[0, 20]).find_or_create_by!(email: u[:email])
+    create_with(
+      uid: u[:uid],
+      provider: 'google',
+      password: Devise.friendly_token[0, 20]
+    ).find_or_create_by!(email: u[:email])
+  end
+
+  private
+
+  def password_required?
+    provider.blank? || !password.nil?
+  end
+
+  def google_auth?
+    provider == 'google'
   end
 end
