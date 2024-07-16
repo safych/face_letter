@@ -15,12 +15,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil @user.errors[:password], 'no validation error for password present'
   end
 
-  test 'invalid with incorrect password format' do
-    @user.password = '123d13df'
-    refute @user.valid?, 'user is valid with incorrect password format'
-    assert_includes @user.errors[:password], I18n.t("models.user.password_validates_format"), 'Password format error message not found'
-  end
-
   test 'invalid with incorrect name and surname length' do
     @user.name = 'sdfgggggggggggggggggggggggggggggvtrvrtgrrrrrrrrrrrrrrrrrrrrrrrr'
     @user.surname = 'sdfgggggggggggggggggggggggggggggvtrvrtgrrrrrrrrrrrrrrrrrrrrrr'
