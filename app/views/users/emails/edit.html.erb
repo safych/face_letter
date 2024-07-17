@@ -1,4 +1,10 @@
 <%= form_with(model: current_user, url: email_path(current_user), method: :patch) do |f| %>
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
+      <%= value %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :new_email, t("views.users.emails.edit.new_email") %><br />
     <%= f.email_field :new_email, autofocus: true, autocomplete: "unconfirmed_email" %>
