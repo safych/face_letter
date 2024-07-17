@@ -1,5 +1,5 @@
 class UserUpdater
-  attr_reader :params, :current_user
+  attr_reader :params, :current_user, :user
   attr_accessor :message
 
   def initialize(params, current_user, user)
@@ -16,10 +16,28 @@ class UserUpdater
   private
 
   def user_verification
-    if @current_user == @user && @user.valid_password?(@params[:current_password])
+    if @current_user == @user
       update
     else
-      @message[:error] = I18n.t("services.user_updater.not_correct_user_or_password")
+      @message[:error] = I18n.t("services.user_updater.not_correct_user")
+    end
+  end
+
+  def password_verification
+    true if @user.valid_password?(@params[:current_password])
+    @message[:error] = I18n.t("services.user_updater.not_correct_password")
+    false
+  end
+
+  def password_format_verification
+    error_text = ""
+    password_validator = PasswordValidator.new(@params[:new_password])
+    unless password_validator.valid?
+      password_validator.errors.full_messages.each do |message|
+        error_text += "#{message}. "
+      end
+      @message[:error] = error_text
+      return false
     end
   end
 
@@ -44,18 +62,22 @@ class UserUpdater
   end
 
   def update_password
-    if @user.update(password: @params[:new_password])
-      @message[:done] = I18n.t("services.user_updater.user_password_successful_updated")
-    else
-      @message[:error] = I18n.t("services.user_updater.user_password_did_not_update")
+    if password_format_verification && password_verification
+      if @user.update(password: @params[:new_password])
+        @message[:done] = I18n.t("services.user_updater.user_password_successful_updated")
+      else
+        @message[:error] = I18n.t("services.user_updater.user_password_did_not_update")
+      end
     end
   end
 
   def send_letter_for_update_email
-    @user.update_email_token = SecureRandom.hex(3)
-    @user.update_email_token_sent_at = DateTime.now
-    @user.save
-    UserMailer.update_email(@user.email, @user.update_email_token).deliver_now
+    if password_verification
+      @user.update_email_token = SecureRandom.hex(3)
+      @user.update_email_token_sent_at = DateTime.now
+      @user.save
+      UserMailer.update_email(@user.email, @user.update_email_token).deliver_now
+    end
   end
 
   def update_avatar
