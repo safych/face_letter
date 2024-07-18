@@ -1,46 +1,46 @@
-<h1><%= t("views.profiles.show.profile") %></h1>
-
 <%= render "profiles/user_card" %>
 
-<% flash.each do |key, value| %>
-  <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
-    <%= value %>
-  </div>
-<% end %>
+<div class="container" style="margin-top: 4%;">
+  <% flash.each do |key, value| %>
+    <div class="flash <%= key %>" style="<%= key == 'done' ? 'color: #3c763d;' : 'color: red;' %>">
+      <%= value %>
+    </div>
+  <% end %>
 
-<%= link_to t("views.profiles.show.show_all_user_links"), "#", onclick: "document.getElementById('all_user_links').style.display = 'block'; return false;" %>
-<div id="all_user_links", style="display: none;">
-  <%= render "profiles/all_user_links" %>
-</div>
-<br />
-
-<%= link_to t("views.profiles.show.show_user_avatar_update_form"), "#", onclick: "document.getElementById('user_avatar_update_form').style.display = 'block'; return false;" %>
-<div id="user_avatar_update_form", style="display: none;">
-  <%= render "profiles/user_avatar_update_form", user: @user %>
-</div>
-<br />
-
-<%= link_to t("views.profiles.show.show_user_link_create_form"), "#", onclick: "document.getElementById('user_link_create_form').style.display = 'block'; return false;" %>
-<div id="user_link_create_form", style="display: none;">
-  <%= render "profiles/user_link_create_form" %>
-</div>
-<br />
-
-<%= link_to t("views.profiles.show.show_user_name_surname_update_form"), "#", onclick: "document.getElementById('user_name_surname_update_form').style.display = 'block'; return false;" %>
-<div id="user_name_surname_update_form", style="display: none;">
-  <%= render "profiles/user_name_surname_update_form", user: @user %>
-</div>
-<br />
-
-<% if !current_user.email.include? "gmail.com" %>
-  <%= link_to t("views.profiles.show.user_email_update_form"), "#", onclick: "document.getElementById('user_email_update_form').style.display = 'block'; return false;" %>
-  <div id="user_email_update_form", style="display: none;">
-    <%= render "profiles/user_email_update_form", user: @user %>
+  <%= link_to t("views.profiles.show.show_all_user_links"), "#", data: { controller: 'profiles', action: 'profiles#showAllUserLinks' } %>
+  <div id="all_user_links", style="display: none;">
+    <%= render "profiles/all_user_links" %>
   </div>
   <br />
 
-  <%= link_to t("views.profiles.show.show_user_password_update_form"), "#", onclick: "document.getElementById('user_password_update_form').style.display = 'block'; return false;" %>
-  <div id="user_password_update_form", style="display: none;">
-    <%= render "profiles/user_password_update_form", user: @user %>
+  <%= link_to t("views.profiles.show.show_user_avatar_update_form"), "#", data: { controller: 'profiles', action: 'profiles#showUserAvatarUpdateForm' } %>
+  <div id="user_avatar_update_form", style="display: none;">
+    <%= render "profiles/user_avatar_update_form", user: @user %>
   </div>
-<% end %>
+  <br />
+
+  <%= link_to t("views.profiles.show.show_user_link_create_form"), "#", data: { controller: 'profiles', action: 'profiles#showUserLinkCreateForm' } %>
+  <div id="user_link_create_form", style="display: none;">
+    <%= render "profiles/user_link_create_form" %>
+  </div>
+  <br />
+
+  <%= link_to t("views.profiles.show.show_user_name_surname_update_form"), "#", data: { controller: 'profiles', action: 'profiles#showUserNameSurnameUpdateForm' } %>
+  <div id="user_name_surname_update_form", style="display: none;">
+    <%= render "profiles/user_name_surname_update_form", user: @user %>
+  </div>
+  <br />
+
+  <% if !current_user.email.include? "gmail.com" %>
+    <%= link_to t("views.profiles.show.user_email_update_form"), "#", data: { controller: 'profiles', action: 'profiles#showUserEmailUpdateForm' } %>
+    <div id="user_email_update_form", style="display: none;">
+      <%= render "profiles/user_email_update_form", user: @user %>
+    </div>
+    <br />
+
+    <%= link_to t("views.profiles.show.show_user_password_update_form"), "#", data: { controller: 'profiles', action: 'profiles#showUserPasswordUpdateForm' } %>
+    <div id="user_password_update_form", style="display: none;">
+      <%= render "profiles/user_password_update_form", user: @user %>
+    </div>
+  <% end %>
+</div>

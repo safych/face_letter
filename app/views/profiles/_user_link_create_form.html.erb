@@ -1,9 +1,10 @@
 <h3><%= t("views.profiles.show.add_user_link") %></h3>
 <%= form_with(model: @user_link, url: user_links_path, method: :post) do |f| %>
   <div class="field">
-    <%= f.label :url, t("views.profiles.show.url") %>
-    <%= f.text_field :url %>
+    <%= f.label :url, t("views.profiles.show.url"), for: "link-create-field" %><br />
+    <%= f.text_field :url, id: "link-create-field" %>
   </div>
+  <br />
 
   <div class="action">
     <%= f.submit t("views.profiles.show.add_url") %>

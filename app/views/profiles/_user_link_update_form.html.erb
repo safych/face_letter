@@ -1,8 +1,9 @@
 <%= form_with(model: user_link, url: user_link_path(user_link), method: :patch) do |f| %>
   <div class="field">
-    <%= f.label :url, t("views.profiles.show.url") %>
-    <%= f.text_field :url, autocomplete: "url" %>
+    <%= f.label :url, t("views.profiles.show.url"), for: "link-update-field-#{user_link.id}" %><br />
+    <%= f.text_field :url, autocomplete: "url", id: "link-update-field-#{user_link.id}" %>
   </div>
+  <br />
 
   <div class="action">
     <%= f.submit t("views.profiles.show.update_url") %>

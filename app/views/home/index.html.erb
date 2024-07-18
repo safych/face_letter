@@ -7,6 +7,7 @@
         <img src="https://via.placeholder.com/100" alt="User Photo" class="user-photo">
       <% end %>
       <h4 class="user-name"><%= user.name %> <%= user.surname %></h4>
+      <hr class="line">
       <div class="social-links">
           <% user.user_link.each do |link| %>
             <%= link_to href=link.url do %>
