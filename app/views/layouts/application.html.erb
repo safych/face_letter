@@ -9,50 +9,50 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <%= link_to t("views.layouts.application.home"), root_path, class: "navbar-brand" %>
+        <%= link_to t("views.layouts.application.home"), root_path, class: "text-white text-decoration-none h1" %>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person", style="font-size: 2rem;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li>
+                    <%= link_to t("views.layouts.application.profile"), profile_path, class: "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to t("views.layouts.application.log_out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  </li>
+                </ul>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to new_user_registration_path, class: "nav-link" do %>
+                  <i class="bi bi-person-plus"></i>
+                  <%= t("views.layouts.application.sign_up") %>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_session_path, class: "nav-link" do %>
+                  <i class="bi bi-box-arrow-in-right"></i>
+                  <%= t("views.layouts.application.log_in") %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="glyphicon glyphicon-user"></span> <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to t("views.layouts.application.profile"), profile_path %>
-                </li>
-                <li>
-                  <%= link_to t("views.layouts.application.log_out"), destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to new_user_registration_path do %>
-                <span class="glyphicon glyphicon-user"></span> 
-                <%= t("views.layouts.application.sign_up") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_user_session_path do %>
-                <span class="glyphicon glyphicon-log-in"></span>
-                <%= t("views.layouts.application.log_in") %>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
       </div>
     </nav>
-
 
     <%= yield %>
   </body>
