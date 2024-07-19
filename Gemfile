@@ -41,7 +41,6 @@ gem "omniauth-rails_csrf_protection"
 
 gem "bootstrap-sass"
 gem "sassc-rails"
-gem "bootstrap-icons-helper"
 
 # Use Kaminary to split models into pages
 gem "kaminari", "~> 1.2", ">= 1.2.2"
