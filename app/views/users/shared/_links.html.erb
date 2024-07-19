@@ -20,8 +20,8 @@
 
 <% if devise_mapping.omniauthable? %>
   <% resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "btn btn-light", method: :post do %>
-      <%= bootstrap_icon "google", width: 50, height: 20, fill: "black" %>
+    <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "btn btn-light", style: "width: 5%;", method: :post do %>
+      <i class="bi bi-google"></i>
     <% end %>
   <% end %>
 <% end %>
