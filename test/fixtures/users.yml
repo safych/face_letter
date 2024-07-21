@@ -1,11 +1,13 @@
-one: {
-  name: "Bob",
-  surname: "Clooney",
+one:
+  id: 1
+  name: "Bob"
+  surname: "Clooney"
   email: "bob@er.fg"
-}
+  encrypted_password: <%= User.new.send(:password_digest, 'Password123!') %>
 
-two: {
-  name: "Alex",
-  surname: "Moonshine",
+two:
+  id: 2
+  name: "Alex"
+  surname: "Moonshine"
   email: "alexmoon@er.fg"
-}
+  encrypted_password: <%= User.new.send(:password_digest, 'Password123!') %>
