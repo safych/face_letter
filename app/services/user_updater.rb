@@ -24,7 +24,7 @@ class UserUpdater
   end
 
   def password_verification
-    true if @user.valid_password?(@params[:current_password])
+    return true if @user.valid_password?(@params[:current_password])
     @message[:error] = I18n.t("services.user_updater.not_correct_password")
     false
   end
@@ -39,6 +39,7 @@ class UserUpdater
       @message[:error] = error_text
       return false
     end
+    true
   end
 
   def update
