@@ -35,4 +35,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @user.reload
     assert_equal @user.valid_password?("Newpass123!!!"), true
   end
+
+  test "should update user's avatar" do
+    avatar_path = Rails.root.join("test/fixtures/files/photo_2024-07-23_11-25-48.jpg")
+    patch user_url(@user), params: { user: { avatar: fixture_file_upload(avatar_path, "image/png") } }
+    assert_redirected_to profile_path
+    follow_redirect!
+    assert_equal flash[:done], I18n.t("services.user_updater.user_avatar_successful_updated")
+  end
 end
