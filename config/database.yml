@@ -20,3 +20,5 @@ test:
 production:
   <<: *default
   database: face_letter_production
+  username: <%= ENV["PRODUCTION_DATABASE_USER"] %>
+  password: <%= ENV["PRODUCTION_DATABASE_PASSWORD"] %>
