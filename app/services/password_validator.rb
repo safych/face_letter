@@ -1,7 +1,7 @@
 class PasswordValidator
   include ActiveModel::Model
 
-  attr_accessor :password
+  attr_reader :password
 
   validates :password, presence: true, length: { minimum: 8, maximum: 128 }
   validates :password, format: { 
