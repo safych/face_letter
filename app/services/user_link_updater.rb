@@ -1,7 +1,6 @@
 class UserLinkUpdater
-  attr_reader :params, :current_user, :user_link
-  attr_accessor :message
-
+  attr_reader :params, :current_user, :user_link, :message
+ 
   def initialize(params, current_user, user_link)
     @params = params
     @current_user = current_user

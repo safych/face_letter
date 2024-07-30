@@ -1,6 +1,5 @@
 class EmailUpdater
-  attr_reader :user, :params
-  attr_accessor :message
+  attr_reader :user, :params, :message
 
   def initialize(params, user)
     @params = params

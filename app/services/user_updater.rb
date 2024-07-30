@@ -1,6 +1,5 @@
 class UserUpdater
-  attr_reader :params, :current_user, :user
-  attr_accessor :message
+  attr_reader :params, :current_user, :user, :message
 
   def initialize(params, current_user, user)
     @params = params

@@ -1,6 +1,5 @@
 class UserLinkDestroyer
-  attr_reader :user_link, :current_user
-  attr_accessor :message
+  attr_reader :user_link, :current_user, :message
 
   def initialize(user_link, current_user)
     @user_link = user_link

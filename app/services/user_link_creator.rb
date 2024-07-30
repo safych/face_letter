@@ -1,6 +1,5 @@
 class UserLinkCreator
-  attr_reader :params, :user
-  attr_accessor :message
+  attr_reader :params, :user, :message
 
   def initialize(params, user)
     @params = params
