@@ -50,6 +50,9 @@ en:
     user:
       password_validates_format: "Must include at least one lowercase letter, one uppercase letter, one digit, and one special character"
 
+  validators:
+    incorrect_format: "incorrect format"
+  
   views:
     profiles:
       show:
