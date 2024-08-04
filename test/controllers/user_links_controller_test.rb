@@ -20,7 +20,6 @@ class UserLinksControllerTest < ActionDispatch::IntegrationTest
     post user_links_url, params: { user_link: { url: "https://coinmarketcap.com/uk/" } }
     assert_redirected_to profile_path
     follow_redirect!
-    puts flash[:done]
     assert_equal flash[:error], I18n.t("services.user_link_creator.error_limit_user_links")
   end
 
@@ -40,5 +39,20 @@ class UserLinksControllerTest < ActionDispatch::IntegrationTest
     assert_equal flash[:done], I18n.t("services.user_link_updater.user_link_successful_updated")
     user_link.reload
     assert_equal "https://blog.jetbrains.com/kotlin/", user_link.url
+  end
+
+  test "try to create user link with incorrect url format" do
+    post user_links_url, params: { user_link: { url: Faker::Internet.url } }
+    assert_redirected_to profile_path
+    follow_redirect!
+    assert_includes flash[:error], I18n.t("validators.incorrect_format")
+  end
+
+  test "try to update user link with incorrect url format" do
+    user_link = user_links(:one)
+    patch user_link_url(user_link), params: { user_link: { url: Faker::Internet.url } }
+    assert_redirected_to profile_path
+    follow_redirect!
+    assert_includes flash[:error], I18n.t("validators.incorrect_format")
   end
 end

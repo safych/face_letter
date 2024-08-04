@@ -9,10 +9,21 @@ class UserLinkUpdater
   end
 
   def call
-    update
+    url_format_verification
   end
 
   private
+
+  def url_format_verification
+    url_validator = UrlValidator.new(@params[:url])
+    unless url_validator.valid?
+      url_validator.errors.full_messages.each do |message|
+        @message[:error] = message
+      end
+    else
+      update
+    end
+  end
 
   def update
     if @user_link.user == @current_user
