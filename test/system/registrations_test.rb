@@ -41,7 +41,7 @@ class RegistrationsTest < ApplicationSystemTestCase
 
     find('input[name="commit"]').click
 
-    assert_selector "div", text: "is too short (minimum is 6 characters)"
+    assert_selector "div", text: "is too short (minimum is 8 characters)"
     assert_selector "h2", text: I18n.t("views.users.registrations.new.sign_up")
   end
 end
