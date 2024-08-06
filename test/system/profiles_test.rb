@@ -2,8 +2,8 @@ require 'application_system_test_case'
 
 class ProfilesTest < ApplicationSystemTestCase
   setup do
-    user = users(:one)
-    sign_in user
+    @user = users(:one)
+    sign_in @user
   end
 
   test "update  name surname" do
@@ -103,6 +103,42 @@ class ProfilesTest < ApplicationSystemTestCase
     fill_in "new-password-update-password-field", with: "erg2"
     find('input[name="commit"]').click
     assert_selector "div", text: "is too short (minimum is 8 characters)"
+  end
+
+  test "update email" do
+    visit profile_path
+
+    click_on I18n.t("views.profiles.show.user_email_update_form")
+
+    fill_in I18n.t("views.profiles.show.current_password"), with: "Password123!"
+    find('input[name="commit"]').click
+    
+    visit edit_email_path
+
+    @user.reload
+    fill_in "new-email", with: Faker::Internet.email
+    fill_in "token-update-email", with: @user.update_email_token
+    find('input[name="commit"]').click
+
+    assert_selector "h2", text: I18n.t("views.users.sessions.new.log_in")
+  end
+
+  test "try to update email with input incorrect current token" do
+    visit profile_path
+
+    click_on I18n.t("views.profiles.show.user_email_update_form")
+
+    fill_in I18n.t("views.profiles.show.current_password"), with: "Password123!"
+    find('input[name="commit"]').click
+    
+    visit edit_email_path
+
+    @user.reload
+    fill_in "new-email", with: Faker::Internet.email
+    fill_in "token-update-email", with: "token"
+    find('input[name="commit"]').click
+
+    assert_selector "div", text: I18n.t("services.email_updater.not_correct_token_or_time")
   end
 
   test "try to update email with input incorrect current password" do
