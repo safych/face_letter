@@ -10,6 +10,7 @@ module Users
       email_updater.call
       if email_updater.message[:done]
         flash[:done] = email_updater.message[:done]
+        sign_out(current_user)
         redirect_to new_user_session_path
       elsif email_updater.message[:error]
         flash[:error] = email_updater.message[:error]

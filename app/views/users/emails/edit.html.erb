@@ -7,12 +7,12 @@
 
   <div class="field">
     <%= f.label :new_email, t("views.users.emails.edit.new_email") %><br />
-    <%= f.email_field :new_email, autofocus: true, autocomplete: "unconfirmed_email" %>
+    <%= f.email_field :new_email, id: "new-email" %>
   </div>
   
   <div class="field">
     <%= f.label :token, t("view.users.emails.edit.token") %><br />
-    <%= f.text_field :token %>
+    <%= f.text_field :token, id: "token-update-email" %>
   </div>
   <br />
 
